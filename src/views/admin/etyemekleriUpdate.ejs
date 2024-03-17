@@ -1,0 +1,51 @@
+<%- include("./layout/header")%>
+    <div class="page-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="sub-title">Yemek Düzenleme Bölümü</h4>
+                        <br />
+                        <form method="POST" action="/admin/etyemekleri/update/<%-data.et.id %>" enctype="multipart/form-data">
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Yemek Adı</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="etyemekleri_title" class="form-control"
+                                        placeholder="Yemek Adı"  value="<%-data.et.etyemekleri_title %>"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Yemek Tarifi</label>
+                                <div class="col-sm-10">
+                                    <textarea  type="text" name="etyemekleri_description" class="form-control"
+                                        placeholder="Yemek Tarifi"><%-data.et.etyemekleri_description %></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Malzemeler </label>
+                                <div class="col-sm-10">
+                                    <input type="text"  value="<%-data.et.etyemekleri_materials %>" name="etyemekleri_materials" class="form-control"
+                                        placeholder="Malzemeler" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Fotoğraf Seç</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="file" class="form-control" />
+                                </div>
+                            </div> 
+
+                            <button class="btn btn-outline-success" type="submit">
+                                Güncelle !
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("./layout/footer") %>

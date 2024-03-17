@@ -1,0 +1,9 @@
+<%-include("layout/header") %>
+<form action="/admin/users/sifresifirla" method="POST">
+    <input type="hidden" name="id" value="<%= typeof id !=" undefined" ? id: "" %>">
+    <input type="hidden" name="token" value="<%= typeof token !=" undefined" ? token: "" %>">
+    <input type="password" name="password" placeholder="Yeni Şifre">
+    <input type="password" name="rpassword" placeholder="Yeni Şifre Tekrar">
+    <button type="submit" class="site-btn">Gönder</button>
+</form>
+<%-include("layout/footer") %>

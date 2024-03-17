@@ -1,0 +1,190 @@
+<%-include("layout/header") %>
+
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+
+            <div class="hero__item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 p-0">
+                            <div class="hero__inside__item hero__inside__item--wide set-bg"
+                                data-setbg="img/hero/pasta.jpg">
+                                <a href="/pasta">
+                                    <div class="hero__inside__item__text">
+                                        <div class="hero__inside__item--meta">
+                                            <span>08</span>
+                                            <p>Aralık</p>
+                                        </div>
+                                        <div class="hero__inside__item--text">
+                                            <ul class="label">
+                                                <li>Pastalar</li>
+                                            </ul>
+                                            <h4>
+                                               Birbirinden lezzetli ve kolay pasta tariflerini inceleyin
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 p-0">
+                            <div class="hero__inside__item hero__inside__item--small set-bg"
+                                data-setbg="img/hero/mercimek.jpg">
+                                <a href="/corbalar">
+                                    <div class="hero__inside__item__text">
+                                        <div class="hero__inside__item--meta">
+                                            <span>08</span>
+                                            <p>Ocak</p>
+                                        </div>
+                                        <div class="hero__inside__item--text">
+                                            <ul class="label">
+                                                <li>Çorbalar</li>
+                                            </ul>
+                                            <h5>
+                                                Kış aylarının vazgeçilmezleri arasında olan çorba tariflerini inceleyin
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="hero__inside__item hero__inside__item--small set-bg"
+                                data-setbg="img/hero/tavuksote.jpg">
+                                <a href="/tavukyemekleri">
+                                    <div class="hero__inside__item__text">
+                                        <div class="hero__inside__item--meta">
+                                            <span>18</span>
+                                            <p>Şubat</p>
+                                        </div>
+                                        <div class="hero__inside__item--text">
+                                            <ul class="label">
+                                                <li>Tavuk Yemekleri</li>
+                                            </ul>
+                                            <h5>
+                                                En basit şekilde en lezzetli tavuk yemeklerini yapmanızı saglıyorum
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 p-0">
+                            <div class="hero__inside__item set-bg" data-setbg="img/hero/cobansalata.jpg">
+                                <a href="/salatalar">
+                                    <div class="hero__inside__item__text">
+                                        <div class="hero__inside__item--meta">
+                                            <span>13</span>
+                                            <p>Ocak</p>
+                                        </div>
+                                        <div class="hero__inside__item--text">
+                                            <ul class="label">
+                                                <li>Salata</li>
+                                            </ul>
+                                            <h5>
+                                                Birbirinden lezzetli satalata tariflerini görmek için tıklayın
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%if(data && data.items) {%>
+                <div class="hero__item">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6 p-0">
+                                <div class="hero__inside__item hero__inside__item--wide set-bg"
+                                    data-setbg="img/hero/pasta.jpg">
+                                    <a href="/pasta">
+                                        <div class="hero__inside__item__text">
+                                            <div class="hero__inside__item--meta">
+                                                <span>08</span>
+                                                <p>Aralık</p>
+                                            </div>
+                                            <div class="hero__inside__item--text">
+                                                <ul class="label">
+                                                    <li>Pastalar</li>
+                                                </ul>
+                                                <h4>
+                                                   Birbirinden lezzetli ve kolay pasta tariflerini inceleyin
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </a>
+    
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-0">
+                                <div class="hero__inside__item hero__inside__item--small set-bg"
+                                    data-setbg="<%=data.items[0].photo%>">
+                                    <a href="<%=data.items[0].link%>">
+                                        <div class="hero__inside__item__text">
+                                            <div class="hero__inside__item--text">
+                                                <ul class="label">
+                                                    <li><%=data.items[0].title%></li>
+                                                </ul>
+                                                <h5>
+                                                    <%=data.items[0].description%>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </a>
+    
+                                </div>
+                                <div class="hero__inside__item hero__inside__item--small set-bg"
+                                    data-setbg="<%=data.items[1].photo%>">
+                                    <a href="<%=data.items[1].link%>">
+                                        <div class="hero__inside__item__text">
+                                            <div class="hero__inside__item--text">
+                                                <ul class="label">
+                                                    <li><%=data.items[1].title%></li>
+                                                </ul>
+                                                <h5>
+                                                    <%=data.items[1].description%>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </a>
+    
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-0">
+                                <div class="hero__inside__item set-bg" data-setbg="img/hero/cobansalata.jpg">
+                                    <a href="/salatalar">
+                                        <div class="hero__inside__item__text">
+                                            <div class="hero__inside__item--meta">
+                                                <span>13</span>
+                                                <p>Ocak</p>
+                                            </div>
+                                            <div class="hero__inside__item--text">
+                                                <ul class="label">
+                                                    <li>Salata</li>
+                                                </ul>
+                                                <h5>
+                                                    Birbirinden lezzetli satalata tariflerini görmek için tıklayın
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </a>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           <%}%>
+        </div>
+        
+    </section>
+
+
+
+    <%-include("layout/footer") %>

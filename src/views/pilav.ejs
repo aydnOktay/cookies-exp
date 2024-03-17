@@ -1,0 +1,93 @@
+<%- include("layout/header") %>
+
+<section class="categories categories-grid spad">
+    <div class="categories__post">
+        <div class="container">
+            <div class="categories__grid__post">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="breadcrumb__text">
+                            <h2>Kategori : <span>Pilavlar</span></h2>
+                            <div class="breadcrumb__option">
+                                <a href="/">Anasayfa</a>
+                                <span>Pilavlar</span>
+                            </div>
+                        </div>
+
+                        <!-- Filtreleme Inputu -->
+                        <div class="form-group">
+                            <label for="filterInput">Başlık Filtrele:</label>
+                            <input type="text" class="form-control" id="filterInput" placeholder="Başlık Girin" oninput="filterTitles()">
+                        </div>
+
+                        <% data.pilavv.slice(data.pagination.start, data.pagination.end).forEach(element => { %>
+                            <div class="categories__list__post__item" data-materials="<%- element.pilavlar_materials.join(', ') %>">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="categories__post__item__pic set-bg"
+                                            data-setbg="/admin/demos/<%- element.pilavlar_photo %>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="categories__post__item__text">
+                                            <h3><a href="#">
+                                                    <span><%- element.pilavlar_title %></span> </a></h3>
+                                            <hr>
+                                            <a href="/pilavdetay/<%-element.id %>">
+                                                <button class="btn btn-outline-success btn-sm">Tarife
+                                                    Git</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="categories__pagination">
+                                    <% for(var i = 1; i <= data.pagination.totalPages; i++) {%>
+                                        <a href="/pilavlar?page=<%- i %>" class="page-number"><%- i %></a>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("layout/footer") %>
+
+<script>
+    function filterTitles() {
+        // Kullanıcının girdiği malzemeler
+        var inputMaterials = document.getElementById('filterInput').value.toLowerCase().split(',');
+    
+        // Tüm kategorilerin listesini al
+        var categories = document.querySelectorAll('.categories__list__post__item');
+    
+        // Her bir kategoriyi kontrol et
+        categories.forEach(function(category) {
+            // Kategorinin malzeme verisini al
+            var materialsAttribute = category.getAttribute('data-materials').toLowerCase();
+            var materials = materialsAttribute.split(',').map(function(material) {
+                return material.trim();
+            });
+    
+            // Girişteki her malzemeyi kontrol et
+            var match = inputMaterials.every(function(inputMaterial) {
+                return materials.includes(inputMaterial.trim());
+            });
+    
+            // Malzemelerde girişe uygun bir eşleşme bulunursa göster, aksi takdirde gizle
+            if (match) {
+                category.style.display = 'block';
+            } else {
+                category.style.display = 'none';
+            }
+        });
+    }
+    </script>

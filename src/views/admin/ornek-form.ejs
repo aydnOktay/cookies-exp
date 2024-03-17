@@ -1,0 +1,33 @@
+<%- include("./layout/header")%>
+    <div class="page-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="sub-title">Kategori Ekleme Bölümü</h4>
+                        <br />
+                        <form method="POST" action="/admin/category/add" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Kategori Adı</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="category_name" class="form-control"
+                                        placeholder="Kategori İsmi" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Fotoğraf Seç</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="file" class="form-control" />
+                                </div>
+                            </div>
+
+                            <button class="btn btn-outline-success" type="submit">
+                                EKLE !
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("./layout/footer") %>

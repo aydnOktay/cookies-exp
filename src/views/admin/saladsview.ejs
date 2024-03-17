@@ -1,0 +1,61 @@
+<%- include("./layout/header") %>
+<div class="page-body">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Salatalar</h5>
+          <hr />
+          <a href="/admin/salads/salataekle">
+            <button class="btn btn-success">
+              <i class="icofont icofont-check-circled"></i> Salata Ekle
+            </button></a
+          >
+          <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+              <li><i class="icofont icofont-simple-left"></i></li>
+              <li><i class="icofont icofont-maximize full-card"></i></li>
+              <li><i class="icofont icofont-minus minimize-card"></i></li>
+              <li><i class="icofont icofont-refresh reload-card"></i></li>
+              <li><i class="icofont icofont-error close-card"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-block table-border-style">
+          <div class="table-responsive">
+            <table class="table"  id="dataTable">
+              <thead>
+                <tr>
+                  <th>Salata Fotoğraf</th>
+                  <th>Salata Adı</th>
+                  <th>Düzenle</th>
+                  <th>Sil</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <% data.salads.forEach(element=> { %>
+                <tr>
+                  <td>
+                    <img
+                      src="/admin/demos/<%-element.salads_photo %>"
+                      style="height: 50px; width: 50px; object-fit: contain"
+                      class="img-fluid"
+                      alt="Colorlib Template"/>
+                  </td>
+                  <td><%- element.salads_title %></td>
+                  <td>
+                    <a href="/admin/salads/salataduzenle/<%- element.id %>"><button class="btn btn-outline-success btn-sm">Düzenle</button> </a></td>
+                  <td> <a href="/admin/salads/salatasil/<%- element.id %>"><button class="btn btn-outline-danger btn-sm">SİL</button></a>  </td>
+                </tr>
+                <% }) %>
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./layout/footer") %>
